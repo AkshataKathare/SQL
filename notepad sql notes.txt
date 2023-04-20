@@ -1,0 +1,7 @@
+Data-meaningful information stored into database
+Database-organised and structured values stored in database
+RDBMS-Relational Data Base Management System
+MONGODB,ORACLEDB,etc...
+
+
+
