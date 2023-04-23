@@ -122,3 +122,14 @@ SELECT MAX(colName) from tableName; or SELECT MAX(colName) from tableName where 
 
 -- If we want to get average of any numbers like percentage,age etc :
 SELECT AVG(percentage) from tableName;
+
+-- If we want to select the columns if any column consists of data with any specific letter at a specific position :
+SELECT colName from tableName where col like '__A%'; -- this gives the names which have 'A' as the third letter and can have letters further
+
+SELECT col1,col2 from tableName where col like '%T';-- this gives data having T at the end only
+
+-- If we want to select the columns if any column consists of data with any specific letters in the beginning and end:
+SELECT col1,col2.. from tableName where anyCol like 'M%N';-- this gives the names which starts with M and ends with N
+
+SELECT comm,CASE WHEN comm is null then 'Not given' else 'given' END FROM empl;-- this is to print a specific data for a specific condition in table
+
