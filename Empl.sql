@@ -1,3 +1,4 @@
+-- 22-04=2023 task
 CREATE TABLE empl(
 empNo int not null,
 eName varchar(30),
