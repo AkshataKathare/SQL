@@ -1,4 +1,4 @@
--- 22-04=2023 task
+-- 22-04-2023 task
 CREATE TABLE empl(
 empNo int not null,
 eName varchar(30),
@@ -28,7 +28,9 @@ SELECT eName,sal FROM empl WHERE sal>=2200;
 
 SELECT * from empl WHERE comm IS NULL;
 
-SELECT eName,sal FROM empl WHERE not 4000<sal>2500;
+SELECT eName,sal FROM empl WHERE sal<4000 and sal>2500;
+
+SELECT eName,sal FROM empl WHERE not sal<4000 and sal>2500;
 
 SELECT eName,job,sal FROM empl WHERE not job='MANAGER';
 
@@ -37,7 +39,28 @@ SELECT eName FROM empl WHERE eName LIKE '___A%';
 SELECT eName FROM empl WHERE eName LIKE '%T';
 SELECT eName FROM empl WHERE eName LIKE '%P';
 
+SELECT * FROM empl WHERE eName LIKE '%A%';
+
 SELECT eName FROM empl WHERE eName like 'M%N';
 
-SELECT comm,CASE WHEN comm is null then 'Not given' else 'given' END FROM empl;
+-- 24-04-2023:
+SELECT comm,CASE WHEN comm is null then 'Not given' else comm END as abcd FROM empl; -- abcd is alia name i.e for the understanding
 
+SELECT comm as commission FROM empl; -- alia name
+
+SELECT sal as Salary FROM empl;
+
+SELECT * FROM empl WHERE job in('SALESMAN','MANAGER');
+
+SELECT * FROM empl WHERE job not in('SALESMAN','MANAGER');
+
+SELECT * FROM empl WHERE sal between 2500 and 4000;
+
+SELECT * FROM empl WHERE sal not between 2500 and 4000;
+
+-- task
+SELECT * FROM empl WHERE hireDate between '1990-12-18' and '1991-05-01';
+
+SELECT deptNo as DepartmentNo FROM empl;
+
+SELECT * FROM empl WHERE eName not in ('SMITH','ANYA');

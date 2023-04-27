@@ -123,6 +123,7 @@ SELECT MAX(colName) from tableName; or SELECT MAX(colName) from tableName where 
 -- If we want to get average of any numbers like percentage,age etc :
 SELECT AVG(percentage) from tableName;
 
+-- 22-04-2023:
 -- If we want to select the columns if any column consists of data with any specific letter at a specific position :
 SELECT colName from tableName where col like '__A%'; -- this gives the names which have 'A' as the third letter and can have letters further
 
@@ -133,3 +134,33 @@ SELECT col1,col2.. from tableName where anyCol like 'M%N';-- this gives the name
 
 SELECT comm,CASE WHEN comm is null then 'Not given' else 'given' END FROM empl;-- this is to print a specific data for a specific condition in table
 
+-- 24-04-23:
+-- If we want to select the table where a column is having a specific value or the other value:
+SELECT * from tableName where colName in('...','...',...);  -- 'in' acts as or operator
+
+SELECT * FROM empl WHERE job not in('SALESMAN','MANAGER');-- opposite of above query
+
+-- between clause:
+SELECT * FROM empl WHERE sal between 2500 and 4000;
+SELECT * FROM empl WHERE sal not between 2500 and 4000;
+
+SELECT comm as commission FROM empl; -- alias name
+SELECT comm as commission,sal as salary FROM empl;
+
+-- If we want to remove all the data from the table but we use delete if we want to delete specific columns:
+TRUNCATE FROM tableName;
+
+-- DROP or DELETE will affect all the rows as it will delete row by row and Truncate will not affect 
+-- all the rows and hence delete will be faster than truncate as it takes 0.000 sec
+
+-- check is a constraint used to put the conditions like:
+CREATE TABLE new3(
+age int,
+check(age>=20)
+);
+
+-- For current values:
+SELECT current_timestamp() as CurrentDateAndTime;
+SELECT current_date() as todayDate;
+SELECT current_time() as currentTime;
+SELECT current_user() as currentUser;
