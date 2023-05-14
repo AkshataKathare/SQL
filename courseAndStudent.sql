@@ -29,3 +29,8 @@ INSERT INTO studentdetails VALUES(3,'Shubhangi',2);
 INSERT INTO studentdetails VALUES(4,'Savitri',3);
 
 SELECT * FROM studentdetails LEFT JOIN coursename on codeNo_fk=srNo;
+
+CREATE TABLE flower(
+flowerName varchar(39),
+color varchar(50)
+);
